@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlainVoice</title>
+  <meta name="description" content="Narration for AI-made videos. Unlimited, offline, with word timing your agent can use. Text-to-speech for macOS.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <svg class="logo" viewBox="0 0 256 256" width="72" height="72" fill="none" aria-hidden="true">
+        <path d="M68 44H188C205.7 44 220 58.3 220 76V148C220 165.7 205.7 180 188 180H112L72 216V180H68C50.3 180 36 165.7 36 148V76C36 58.3 50.3 44 68 44Z" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M72 88H116M72 112H104M72 136H116" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>
+        <path d="M148 100V124M168 80V144M188 92V132" class="accent" stroke-width="16" stroke-linecap="round"/>
+      </svg>
+      <h1>PlainVoice</h1>
+      <p class="tagline">Narration for AI-made videos. Unlimited, offline, with word timing your agent can use.</p>
+      <p class="sub">A text-to-speech app for macOS. People use the window; agents use MCP and the
+        command line. No account, no per-character bill, no telemetry.</p>
+      <p class="actions">
+        <a class="button" href="https://github.com/plainvoice/plainvoice/releases/latest">Download for macOS</a>
+        <a href="https://github.com/plainvoice/plainvoice/blob/main/guide/install.md">Install guide</a>
+      </p>
+      <p class="fine">macOS 14 or later, Apple silicon. Version 1.0 is not notarised yet;
+        the <a href="https://github.com/plainvoice/plainvoice/blob/main/guide/install.md">install guide</a>
+        shows the one extra step on first open.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section aria-labelledby="features">
+      <h2 id="features">What it does</h2>
+      <ul class="features">
+        <li><strong>Unlimited, offline, on the CPU.</strong> Once the models are downloaded, voicing never touches the network.</li>
+        <li><strong>Long jobs that survive anything.</strong> A whole book runs in the background and resumes after a quit, a crash or sleep. TXT, Markdown and EPUB in; chapters out.</li>
+        <li><strong>Word timing on every line</strong>, as SRT, VTT and JSON, so video tools and agents can place captions and cuts.</li>
+        <li><strong>Bad takes caught for you.</strong> An aligner flags skipped or invented words and re-rolls the line.</li>
+        <li><strong>Agents are first-class.</strong> Every operation is an MCP tool and a CLI command. Jobs an agent starts show up live in the window, where you fix one line and re-voice only that line.</li>
+        <li><strong>Pronunciation under your control:</strong> <code>[word](respelling)</code>, <code>[word](/phonemes/)</code> and <code>[pause:600ms]</code> right in the script, plus dictionaries.</li>
+        <li><strong>Vietnamese done properly:</strong> 23 voices from the North, Centre and South, with English words mixed in.</li>
+        <li><strong>Exports</strong> as WAV (48 kHz mono 16-bit), FLAC, M4A and M4B audiobooks, each marked as AI-generated speech in its metadata.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="listen">
+      <h2 id="listen">Listen</h2>
+      <p>The same paragraph in four free voices, voiced on a Mac's CPU.</p>
+      <div class="samples">
+        <figure>
+          <figcaption>Kokoro <code>af_heart</code> · US English</figcaption>
+          <audio controls preload="none" src="samples/kokoro-af_heart.m4a"></audio>
+        </figure>
+        <figure>
+          <figcaption>Kokoro <code>bf_emma</code> · UK English</figcaption>
+          <audio controls preload="none" src="samples/kokoro-bf_emma.m4a"></audio>
+        </figure>
+        <figure>
+          <figcaption>VieNeu Minh Quân · Northern Vietnamese</figcaption>
+          <audio controls preload="none" src="samples/vieneu-minh-quan.m4a"></audio>
+        </figure>
+        <figure>
+          <figcaption>VieNeu Thùy Dung · Southern Vietnamese</figcaption>
+          <audio controls preload="none" src="samples/vieneu-thuy-dung.m4a"></audio>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="tiers">
+      <h2 id="tiers">Free and Studio</h2>
+      <div class="tiers">
+        <div class="tier">
+          <h3>Free</h3>
+          <ul>
+            <li>28 Kokoro English voices, US and UK</li>
+            <li>23 VieNeu Vietnamese voices</li>
+            <li>Unlimited synthesis and long jobs</li>
+            <li>Every export format and word timing</li>
+            <li>Quality check, MCP and CLI</li>
+          </ul>
+        </div>
+        <div class="tier studio">
+          <h3>Studio</h3>
+          <ul>
+            <li>Everything in Free</li>
+            <li>8 Chatterbox Turbo English voices, the most natural in PlainVoice</li>
+            <li>Expression tags such as <code>[laugh]</code> and <code>[whispering]</code></li>
+            <li>Voice cloning with consent, Vietnamese and English</li>
+            <li>Perpetual: buy once, no subscription</li>
+          </ul>
+          <p class="included">Included with a PlainTake licence: one purchase, both apps.</p>
+          <p><a class="button" href="https://plainlab.gumroad.com/l/plaintake">Get a licence</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="agents">
+      <h2 id="agents">For agents</h2>
+      <p>Add PlainVoice to Claude Code as a plugin:</p>
+      <pre><code>/plugin marketplace add plainvoice/plainvoice
+/plugin install plainvoice</code></pre>
+      <p>Or copy the setup for Claude Code or Codex from the app's Settings. Nine MCP tools cover
+        voices, models, lint, synthesis, jobs, line fixes and pronunciations, and every one has a
+        <code>plainvoice</code> CLI twin.</p>
+    </section>
+
+    <section aria-labelledby="guide">
+      <h2 id="guide">Guide</h2>
+      <ul class="guide">
+        <li><a href="https://github.com/plainvoice/plainvoice/blob/main/guide/install.md">Install</a></li>
+        <li><a href="https://github.com/plainvoice/plainvoice/blob/main/guide/first-job.md">Your first job</a></li>
+        <li><a href="https://github.com/plainvoice/plainvoice/blob/main/guide/agents.md">Agents</a></li>
+        <li><a href="https://github.com/plainvoice/plainvoice/blob/main/guide/markup.md">Script markup</a></li>
+        <li><a href="https://github.com/plainvoice/plainvoice/blob/main/guide/voices.md">Voices and models</a></li>
+        <li><a href="https://github.com/plainvoice/plainvoice/blob/main/guide/studio.md">Studio</a></li>
+        <li><a href="https://github.com/plainvoice/plainvoice/blob/main/guide/faq.md">FAQ</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p><a href="https://github.com/plainvoice/plainvoice/blob/main/CHANGELOG.md">Changelog</a> ·
+      <a href="https://github.com/plainvoice/plainvoice/blob/main/LICENSE">Licence</a> ·
+      <a href="https://github.com/plainvoice/plainvoice/blob/main/NOTICE.md">Third-party notices</a> ·
+      <a href="https://github.com/plainvoice/plainvoice">GitHub</a></p>
+  </footer>
+</body>
+</html>
